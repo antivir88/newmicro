@@ -7,8 +7,9 @@ class DefaultController extends \Micro\Web\Controller
 {
     public function actionIndex()
     {
-        $this->response = $this->response->withStatus(200);
-        $this->view->data = '<h1>Hello, world! wdqwdqwd</h1>';
+        //$this->response = $this->response->withStatus(400);
+
+        $this->view->addParameter('hello', 'world!');
     }
     public function actionHello()
     {

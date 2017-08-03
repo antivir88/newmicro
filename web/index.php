@@ -4,7 +4,8 @@ function dvd($mix = null) { die(var_dump($mix)); }
 
 require __DIR__ . '/../src/__bootstrap.php';
 
-echo (
+/** @var \Zend\Diactoros\Response $response */
+$response =  (
     new \Micro\Web\Application(
         new \App\Kernel('devel', true)
     )
@@ -12,6 +13,13 @@ echo (
     \Zend\Diactoros\ServerRequestFactory::fromGlobals( $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES )
 );
 
+header('HTTP/1.1 ' . $response->getStatusCode() . ' ' . $response->getReasonPhrase());
+
+foreach ($response->getHeaders() as $header => $values) {
+    header("    %s: %s\n", $header, implode(', ', $values));
+}
+
+echo $response->getBody();
 
 
 
