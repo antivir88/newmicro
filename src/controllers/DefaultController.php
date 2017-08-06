@@ -7,12 +7,14 @@ class DefaultController extends \Micro\Web\Controller
 {
     public function actionIndex()
     {
-        //$this->response = $this->response->withStatus(400);
+        $this->response = $this->response->withStatus(400);
 
-        $this->view->addParameter('hello', 'world!');
+        $this->view->addParameter('model', 'world!');
     }
+
     public function actionHello()
     {
-        return '<h1>Hello, world! '.$this->container->get('kernel')->getCacheDir().'</h1>';
+        $this->view->addParameter('str', '<h1>Hello, world! '.$this->container->get('kernel')->getCacheDir().'</h1>' );
+        $this->view->setView('index');
     }
 }
