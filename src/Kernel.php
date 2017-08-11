@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Micro\Base\Kernel as BaseKernel;
-
-class Kernel extends BaseKernel
+class Kernel extends \Micro\Base\Kernel
 {
     public function getAppDir()
     {
