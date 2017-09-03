@@ -14,7 +14,8 @@
     "linpax/microphp-base": "dev-master",
     "linpax/microphp-web": "dev-master",
     "linpax/microphp-cli": "dev-master",
-    "linpax/microphp-router-web": "dev-master"
+    "linpax/microphp-router-web": "dev-master",
+    "linpax/microphp-logger-adapter-mail": "dev-master"
   },
   "autoload": {
     "psr-4": {

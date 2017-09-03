@@ -4,7 +4,7 @@ function dvd($mix = null) { die(var_dump($mix)); }
 
 require __DIR__ . '/../src/__bootstrap.php';
 
-$app = new \Micro\Web\Application(new \App\Kernel('devel', true));
+$app = new \Micro\Web\Application(new \App\Kernel('devel', false));
 
 /** @var \Zend\Diactoros\Response $response */
 $response = $app->handle(
